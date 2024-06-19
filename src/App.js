@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { NotesProvider } from "./Context/NotesContex";
+import NotesList from "./components/NotesList";
+import NewNoteForm from "./components/NewNoteForm";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotesProvider>
+      <h1>Sticky Notes</h1>
+      <NewNoteForm />
+      <NotesList />
+    </NotesProvider>
   );
-}
+};
 
 export default App;
